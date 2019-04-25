@@ -21,7 +21,7 @@
 
 <script>
   export default {
-    props: ['end'],
+    props: ['end', 'numberToCheck'],
 
     data() {
       return {
@@ -33,7 +33,7 @@
       this.steps = this.$children;
 
       this.steps.forEach((step) => {
-        step.isActive = (step.name == 'Step 1');
+          step.isActive = (step.name == 'Step 1');
       })
     },
 

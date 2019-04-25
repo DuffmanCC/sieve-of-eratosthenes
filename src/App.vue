@@ -9,33 +9,33 @@
         <p v-if="alertBigNumber" class="italic text-sm text-grey-dark thin">That's to big! enter a number under 500</p>
       </div>
 
-      <steps :end="isEnd">
+      <steps :end="isEnd" :numberToCheck="numberToCheck">
         <step name="Step 1">
-          <p class="mb-4">Primer paso: listar los números naturales comprendidos entre 2 hasta el número que se desee, en este caso, hasta el {{ numberToCheck }}.</p>
+          <p class="mb-4">Step 1: list the natural numbers between 2 and the desired number, in this case, up to {{ numberToCheck }}.</p>
           
           <p>Click Step 1</p>
         </step>
 
         <step name="Step 2">
-          <p class="mb-4">Segundo paso: Se toma el primer número no rayado ni marcado, como número primo.</p>
+          <p class="mb-4">Step 2: take the first number not scratched or marked as a prime number.</p>
 
           <p>Click Step 2</p>
         </step>
 
         <step name="Step 3">
-          <p class="mb-4">Tercer paso: Se tachan todos los múltiplos del número que se acaba de indicar como primo.</p>
+          <p class="mb-4">Step 3: all the multiples of the number just indicated as a prime are crossed out.</p>
 
           <p>Click Step 3</p>
         </step>
 
         <step name="Step 4">
-          <p class="mb-4">Cuarto paso: Si el cuadrado del primer número que no ha sido rayado ni marcado es inferior a {{ numberToCheck }}, entonces se repite el segundo paso. Si no, el algoritmo termina, y todos los enteros no tachados son declarados primos.</p>
+          <p class="mb-4">Step 4: If the square of the first number that has not been scratched or marked is less than {{ numberToCheck }}, then the second step is repeated. If not, the algorithm ends and all uncross out integers are declared as prime numbers.</p>
 
-          <p class="mb-4">En este caso. {{ nextNumber }}^2 = {{ nextNumber * nextNumber}} {{ greaterThan }} {{ numberToCheck }}</p>
+          <p class="mb-4">In this case. {{ nextNumber }}^2 = {{ nextNumber * nextNumber}} {{ greaterThan }} {{ numberToCheck }}</p>
 
-          <p v-if="!isEnd">Click Step 4 para volver al Step 2.</p>
+          <p v-if="!isEnd">Click Step 4 to go back to Step 2.</p>
           
-          <p v-if="isEnd">Fin del algoritmo. Click Step 4.</p>
+          <p v-if="isEnd">End of the algorithm. Click Step 4.</p>
         </step>
       </steps>
 
